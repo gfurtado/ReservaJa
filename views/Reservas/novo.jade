@@ -1,0 +1,41 @@
+﻿extends ../layout
+block content
+		.container
+			.form-group(style='width:500px')
+				form(data-toggle='validator', action='/usuarios', method='post')
+					.form-group
+						label(for='nome') Nome:
+						input#nome.form-control(type='text', name='nome', placeholder='Nome', required='')
+					.form-group
+						label(for='email') Email:
+						input#email.form-control(type='email', name='email', placeholder='Email', data-error='O email não está em um formato válido', required='')
+					.form-group
+						label.control-label(for='inputPassword') Senha:
+						.form-inline.row
+							.form-group.col-sm-4
+								input#inputPassword.form-control(type='password', data-minlength='4', placeholder='Senha', required='')
+								.help-block.with-errors
+							.form-group.col-sm-4
+								input#inputPasswordConfirm.form-control(type='password', data-match='#inputPassword', data-match-error='As senhas não são iguais', placeholder='Confirmar', required='')
+								.help-block.with-errors
+					label(for='', tipo='') Tipo:
+					#tipo.form-group
+						label.radio-inline
+							input(type='radio', name='optradio')
+							| Cliente
+						label.radio-inline
+							input(type='radio', name='optradio')
+							| Estabelecimento
+					.form-group
+						label(for='bairro') Endereço:
+						input#endereco.form-control(type='text', name='endereco', placeholder='Endereço')
+					.form-group
+						label(for='bairro') Bairro:
+						input#bairro.form-control(type='text', name='bairro', placeholder='Bairro')
+					.form-group
+						label(for='cidade') Cidade:
+						input#cidade.form-control(type='text', name='cidade', placeholder='Cidade')
+					.form-group
+						label(for='estado') Estado:
+						input#estado.form-control(type='text', name='estado', placeholder='Estado')
+					button.btn.btn-default(type='submit') Salvar

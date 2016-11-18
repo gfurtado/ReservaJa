@@ -1,0 +1,24 @@
+﻿extends ../layout
+
+block content
+	div.container		
+		table#estabelecimentos.table.table-bordered
+			thead
+				tr
+					th Nome
+					th Tipo comida
+					th Bairro
+					th Cidade
+					th Estado
+					th Opções
+				tbody
+					- each estabelecimento in estabelecimentos 
+						tr
+							td #{estabelecimento.nome}
+							td #{estabelecimento.tipoComida}
+							td #{estabelecimento.bairro}
+							td #{estabelecimento.cidade}
+							td #{estabelecimento.estado}
+							td
+								a.btn.btn-default(href="/reservas/novo/#{estabelecimento._id}") Reservar
+								

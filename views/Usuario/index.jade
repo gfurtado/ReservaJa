@@ -1,0 +1,23 @@
+﻿extends ../layout
+
+block content
+	div.container
+		a.btn.btn-default(href="/usuarios/novo") Novo
+		table#usuarios.table.table-bordered
+			thead
+				tr
+					th Nome
+					th Bairro
+					th Cidade
+					th Estado
+					th Opções
+				tbody
+					- each usuario in usuarios 
+						tr
+							td #{usuario.nome}
+							td #{usuario.bairro}
+							td #{usuario.cidade}
+							td #{usuario.estado}
+							td
+								a.btn.btn-default(href="/usuarios/editar/#{usuario._id}") Editar
+								a.btn.btn-default(href="/usuarios/deletar") Deletar

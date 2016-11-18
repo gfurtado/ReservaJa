@@ -1,0 +1,38 @@
+doctype html
+meta(http-equiv="content-type", content="#{contentType}; charset=UTF-8")
+html(lang="pt-BR")
+	head
+		title = Reserva J�
+		link(rel='stylesheet', href='/stylesheets/style.css')
+		link(rel='stylesheet', href='../../css/bootstrap.min.css')
+		link(rel='stylesheet', href='../../css/bootstrap-theme.min.css')
+		link(rel='stylesheet', href='../../css/ie10-viewport-bug-workaround.css')
+	.container(style='margin-bottom:60px;')
+		header
+			// Fixed navbar
+			nav.navbar.navbar-inverse.navbar-fixed-top
+				.container
+					.navbar-header
+						button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+							span.sr-only Toggle navigation
+							span.icon-bar
+							span.icon-bar
+							span.icon-bar
+						a.navbar-brand(href='/') Reserva Já
+					#navbar.navbar-collapse.collapse
+						ul.nav.navbar-nav
+							li
+								a(href='/') Home
+							li.active
+								a(href='/usuarios/novo') Usuarios
+							li
+								a(href='/Reservas') Reservas
+							li
+								a(href='/Estabelecimentos') Estabelecimentos
+		block header
+	body
+		block content
+		script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+		script.
+			window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\\/script>')
+		script(src='../../js/bootstrap.min.js')
