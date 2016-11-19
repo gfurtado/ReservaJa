@@ -12,7 +12,6 @@ router.get('/', function (req, res) {
         } else {
             
             res.format({
-                //HTML response will render the index.jade file in the views/blobs folder. We are also setting "blobs" to be an accessible variable in our jade view
                 html: function () {
                     res.render('Usuario' + '/index', {
                         title: "Usuarios", 
